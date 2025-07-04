@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ThemeSwitch.css";
+import { ThemeSwitchButton } from "../ThemeSwitchButton/ThemeSwitchButton";
 
 export const ThemeSwitch = () => {
   const [currentTheme, setCurrentTheme] = useState("light");
@@ -11,26 +12,20 @@ export const ThemeSwitch = () => {
   return (
     <div className="theme-switch">
       <div className="theme-switch__buttons">
-        <button
-          onClick={() => onThemeSwitch("dark")}
-          className={
-            currentTheme === "dark"
-              ? "theme-switch__button theme-switch__button_active"
-              : "theme-switch__buttton"
-          }
+        <ThemeSwitchButton
+          active={currentTheme === "dark"}
+          value="dark"
+          onSwitch={onThemeSwitch}
         >
           🌑Dark
-        </button>
-        <button
-          onClick={() => onThemeSwitch("light")}
-          className={
-            currentTheme === "light"
-              ? "theme-switch__button theme-switch__button_active"
-              : "theme-switch__buttton"
-          }
+        </ThemeSwitchButton>
+        <ThemeSwitchButton
+          active={currentTheme === "light"}
+          value="light"
+          onSwitch={onThemeSwitch}
         >
           ☀️Light
-        </button>
+        </ThemeSwitchButton>
       </div>
 
       <div className="theme-switch__label">{currentTheme}</div>
