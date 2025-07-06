@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+.dark {
+  background-color: darkgrey;
+}
+
+.light {
+  background-color: lightblue;
+}
+
+.app {
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+}
